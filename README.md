@@ -56,6 +56,10 @@ You can still be locked out - watch your [chrome devtools' network panel](https:
 </details>
 
 
+
+
+
+
 ## Minimum Viable Product (MVP)
 
 > The MVP of this project is broken up between a couple parts.
@@ -77,19 +81,11 @@ _Add 'Search by Name' feature._
 - [ ]  Add the `<SearchForm />` component (see `./components/SearchForm.js`).
 - [ ]  Create a search form that will filter through the data displayed in the character list.
 
-### **Required best practices:**
 
-- [ ]  Consistent naming. Examples: variables, functions, Components, and file/folder organization.
-- [ ]  Consistent spacing. Examples: line breaks, around arguments and before/after functions.
-- [ ]  Consistent quotation usage.
-- [ ]  Spell-check.
-- [ ]  Schedule time to review, refine and reassess your work.
 
-It is better to submit a challenge that meets [MVP](https://en.wikipedia.org/wiki/Minimum_viable_product) than one that attempts too much and fails.
 
----
 
-> 🚀 Pro Tip: Complete as many stretch goals as possible! Even after the Sprint Challenge! You'll get a head start on important upcoming concepts!
+
 
 ## STRETCH GOALS 💪
 

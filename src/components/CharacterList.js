@@ -1,16 +1,49 @@
 import React, { useEffect, useState } from "react";
+import CharacterCard from "./CharacterCard";
 
 export default function CharacterList() {
-  // TODO: Add useState to track data from useEffect
+  const [ characters, setCharacters ] = useState(null);
+  const [ url, setUrl ] = useState({
+    currentUrl: "https://rickandmortyapi.com/api/character/?page=1"
+  })
 
   useEffect(() => {
-    // TODO: Add API Request here - must run in `useEffect`
-    //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
-  }, []);
+    
+    fetch(url.currentUrl)
+    .then(response => response.json())
+    .then(data => {
+      setUrl(data.info)
+      setCharacters(data.results)
+    })
+
+  }, [url]);
+
+  if (!characters) return (
+    <p>Loading...</p>
+  )
+  
+  console.log('url --> ', url);
 
   return (
     <section className="character-list">
-      <h2>TODO: `array.map()` over your state here!</h2>
+      <h2>Characters</h2>
+      
+      {url && url.prev ? (
+        <button onClick={() => setUrl({
+          ...url,
+          currentUrl: url.prev,
+        })} >prev</button>
+
+      ) : null}
+
+      <button onClick={() => setUrl({
+        ...url,
+        currentUrl: url.next,
+      })} >next</button>
+
+      {characters.map(character => (
+        <CharacterCard character={character} url={url} setUrl={setUrl} />
+      ))}
     </section>
   );
 }
